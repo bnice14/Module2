@@ -3,8 +3,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Menu</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Responsive Layout</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        header h1 {
+            text-align: center;
+            font-size: 200%;
+        }
+
+        main {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .box {
+            position: relative;
+            border: 1px solid black;
+            background-color: lightgray;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .title {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: lightgreen;
+            padding: 5px;
+            border: 1px solid black;
+        }
+
+        .box p {
+            margin-top: 50px; /* To prevent text overlap with the title */
+        }
+
+        /* Desktop view: 992px and above */
+        @media (min-width: 992px) {
+            .box {
+                width: 32%; /* 3 boxes in one row */
+            }
+        }
+
+        /* Tablet view: 768px to 991px */
+        @media (min-width: 768px) and (max-width: 991px) {
+            .box {
+                width: 48%;
+            }
+
+            #salad {
+                width: 100%; /* The 3rd box takes the whole row */
+            }
+        }
+
+        /* Mobile view: 767px and below */
+        @media (max-width: 767px) {
+            .box {
+                width: 100%; /* Each section takes full width */
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -13,7 +81,7 @@
     <main>
         <section class="box" id="pizza">
             <div class="title">Pizza</div>
-            <p>>Pizza is one of the most popular and universally loved foods, originating from Italy but embraced by cultures around the world. Traditionally made with a thin, crispy crust, a layer of savory tomato sauce, and topped with mozzarella cheese, pizza has evolved into countless variations. From classic Margherita with fresh basil to indulgent meat-lovers and creative gourmet toppings like truffle oil and arugula, pizza offers endless customization. Its combination of flavors and textures—chewy dough, melty cheese, and flavorful toppings—makes it a perfect dish for any occasion, whether it's a quick meal or a festive gathering.</p>
+            <p>Pizza is one of the most popular and universally loved foods, originating from Italy but embraced by cultures around the world. Traditionally made with a thin, crispy crust, a layer of savory tomato sauce, and topped with mozzarella cheese, pizza has evolved into countless variations. From classic Margherita with fresh basil to indulgent meat-lovers and creative gourmet toppings like truffle oil and arugula, pizza offers endless customization. Its combination of flavors and textures—chewy dough, melty cheese, and flavorful toppings—makes it a perfect dish for any occasion, whether it's a quick meal or a festive gathering.</p>
         </section>
         <section class="box" id="pasta">
             <div class="title">Pasta</div>
@@ -26,4 +94,3 @@
     </main>
 </body>
 </html>
-
